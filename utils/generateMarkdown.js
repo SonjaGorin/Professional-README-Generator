@@ -4,38 +4,25 @@ function renderLicenseBadge(license) {
 
 }
 
+const licenses = {
+  "MIT": {"fullName": "MIT-license-link", "link": "https://opensource.org/licenses/MIT"},
+  "Apache": {"fullName": "Apache-license-link", "link": "https://opensource.org/license/apache-2-0/"},
+  "Boost": {"fullName": "Boost-license-link", "link": "https://www.boost.org/LICENSE_1_0.txt"},
+  "BSD 3-Clause License": {"fullName": "BSD-3-Clause-license-link", "link": "https://opensource.org/license/bsd-3-clause/"},
+  "Eclipse": {"fullName": "Eclipse-license-link", "link": "https://opensource.org/license/epl-1-0/"},
+  "GNU GPL v3": {"fullName": "GNU-GPL-v3-license-link", "link": "https://www.gnu.org/licenses/gpl-3.0"},
+  "IBM": {"fullName": "IBM-license-link", "link": "https://www.ibm.com/docs/en/linux-on-z?topic=examples-common-public-license-v10"},
+  "ISC": {"fullName": "ISC-license-link", "link": "https://opensource.org/license/isc-license-txt/"},
+  "Mozilla": {"fullName": "Mozilla-license-link", "link": "https://opensource.org/license/mpl-2-0/"},
+}
+
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (license === "MIT") {
-    return "[MIT-license-link](https://opensource.org/licenses/MIT)";
-  
-  } else if (license === "Apache") {
-    return "[Apache-license-link](https://opensource.org/license/apache-2-0/)";
+function renderLicenseLink(licenseName) {
+  const license = licenses[licenseName];
 
-  } else if (license === "Boost") {
-    return "[Boost-license-link](https://www.boost.org/LICENSE_1_0.txt)";
-
-  } else if (license === "BSD 3-Clause License") {
-    return "[BSD-3-Clause-license-link](https://opensource.org/license/bsd-3-clause/)";
-
-  } else if (license === "Eclipse") {
-    return "[Eclipse-license-link](https://opensource.org/license/epl-1-0/)";
-
-  } else if (license === "GNU GPL v3") {
-    return "[GNU-GPL-v3](https://www.gnu.org/licenses/gpl-3.0)";
-
-  } else if (license === "IBM") {
-    return "[IBM-license-link](https://www.ibm.com/docs/en/linux-on-z?topic=examples-common-public-license-v10)";
-
-  } else if (license === "ISC") {
-    return "[ISC-license-link](https://opensource.org/license/isc-license-txt/)";
-
-  } else if (license === "Mozilla") {
-    return "[Mozilla-license-link](https://opensource.org/license/mpl-2-0/)";
-
-  } else if (license === "Attribution License (BY)") {
-    return "[Attribution-License-(BY)-link](https://opendatacommons.org/licenses/by/)";
+  if (license) {
+    return `[ + ${license.fullName} + ]( + ${license.link} + )`;
 
   } else {
     return '';
