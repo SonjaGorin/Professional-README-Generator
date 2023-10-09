@@ -23,7 +23,6 @@ function renderLicenseLink(licenseName) {
 
   if (license) {
     return `[ + ${license.fullName} + ]( + ${license.link} + )`;
-
   } else {
     return '';
   }
@@ -38,7 +37,8 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-
+  ## License: 
+  ${renderLicenseLink(data.licenseName)}
 `;
 }
 
