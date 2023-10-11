@@ -13,7 +13,7 @@ const questions = [
             if (userInput) {
                 return true;
             } else {
-                console.log("Please enter a project titile");
+                console.log("Please enter a project title.");
                 return false;
             }
         }
@@ -26,7 +26,33 @@ const questions = [
             if (userDescription) {
                 return true;
             } else {
-                console.log("Please enter a project description");
+                console.log("Please enter a project description.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "How to install the project?", 
+        validate: userInstallation => {
+            if (userInstallation) {
+                return true;
+            } else {
+                console.log("Please describe the installation requirements.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "How to use the project?",
+        validate: userUsage => {
+            if (userUsage) {
+                return true;
+            } else {
+                console.log("Please describe how to use the project.");
                 return false;
             }
         }
