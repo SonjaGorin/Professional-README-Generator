@@ -2,7 +2,8 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license) {
-    return `[![license](https://img.shields.io/badge/license-${license}-purple.svg)](https://shields.io/)`
+    console.log(license)
+    return `[![license](https://img.shields.io/badge/license-${license}-purple.svg)](${renderLicenseLink(license)})`
   } else {
     return ""
   }
@@ -26,7 +27,7 @@ function renderLicenseLink(licenseName) {
   const license = licenses[licenseName];
   
   if (license) {
-    return `[ + ${license.fullName} + ]( + ${license.link} + )`;
+    return `${license.link}`;
   } else {
     return '';
   }
@@ -36,7 +37,7 @@ function renderLicenseLink(licenseName) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== "No license") {
-    return `Please refer to the ${license}`
+    return "Please refer to the license on top of the README file."
   } else {
     return ""
   }
@@ -52,7 +53,7 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Contribution](#contribution)
   * [Testing](#testing)
-  * [Additional Info](#additional-info)
+  * [Contact](#contact)
   ## Description:
   ${data.description}
   ## Installation:
@@ -61,7 +62,6 @@ function generateMarkdown(data) {
   ${data.usage}
   ## License: 
   ${renderLicenseSection(data.license)}
-  ${renderLicenseLink(data.licenseName)}
   ## Contribution: 
   ${data.contribution}
   ## Testing: 
