@@ -9,7 +9,7 @@ const questions = [
         type: "checkbox",
         name: "license",
         message: "Please choose a license for the project:",
-        choices: ["MIT", "Apache", "Boost", "BSD 3-Clause License", "Eclipse", "GNU GPL v3", "IBM", "ISC", "Mozilla"],
+        choices: ["MIT", "Apache", "Boost", "BSD 3-Clause License", "Eclipse", "GNU GPL v3", "IBM", "ISC", "Mozilla", "No license"],
     },
 ];
 
