@@ -5,116 +5,116 @@ const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
 const questions = [
-    // {
-    //     type: "input",
-    //     name: "title",
-    //     message: "What is the title of the project?",
-    //     validate: userTitleInput => {
-    //         if (userTitleInput) {
-    //             return true;
-    //         } else {
-    //             console.log("Please enter a project title.");
-    //             return false;
-    //         }
-    //     }
-    // },
-    // {
-    //     type: "input",
-    //     name: "description",
-    //     message: "Give brief description of the project.",
-    //     validate: userDescriptionInput => {
-    //         if (userDescriptionInput) {
-    //             return true;
-    //         } else {
-    //             console.log("Please enter a project description.");
-    //             return false;
-    //         }
-    //     }
-    // },
-    // {
-    //     type: "input",
-    //     name: "installation",
-    //     message: "How to install the project?", 
-    //     validate: userInstallationInput => {
-    //         if (userInstallationInput) {
-    //             return true;
-    //         } else {
-    //             console.log("Please describe the installation requirements.");
-    //             return false;
-    //         }
-    //     }
-    // },
-    // {
-    //     type: "input",
-    //     name: "usage",
-    //     message: "How to use the project?",
-    //     validate: userUsageInput => {
-    //         if (userUsageInput) {
-    //             return true;
-    //         } else {
-    //             console.log("Please describe how to use the project.");
-    //             return false;
-    //         }
-    //     }
-    // },
     {
-        type: "checkbox",
+        type: "input",
+        name: "title",
+        message: "What is the title of the project?",
+        validate: userTitleInput => {
+            if (userTitleInput) {
+                return true;
+            } else {
+                console.log("Please enter a project title.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "description",
+        message: "Give brief description of the project.",
+        validate: userDescriptionInput => {
+            if (userDescriptionInput) {
+                return true;
+            } else {
+                console.log("Please enter a project description.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "How to install the project?", 
+        validate: userInstallationInput => {
+            if (userInstallationInput) {
+                return true;
+            } else {
+                console.log("Please describe the installation requirements.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "How to use the project?",
+        validate: userUsageInput => {
+            if (userUsageInput) {
+                return true;
+            } else {
+                console.log("Please describe how to use the project.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "list",
         name: "license",
         message: "Please choose a license for the project:",
         choices: ["MIT", "Apache", "Boost", "BSD 3-Clause License", "Eclipse", "GNU GPL v3", "IBM", "ISC", "Mozilla", "No license"],
     },
-    // {
-    //     type: "input",
-    //     name: "contribution",
-    //     message: "How to contribute to the project?",
-    //     validate: userContributionInput => {
-    //         if (userContributionInput) {
-    //             return true;
-    //         } else {
-    //             console.log("Please decsribe how can someone contribute to the project.");
-    //             return false;
-    //         }
-    //     }
-    // },
-    // {
-    //     type: "input",
-    //     name: "test",
-    //     message: "How can the project be tested?",
-    //     validate: userTestInput => {
-    //         if (userTestInput) {
-    //             return true;
-    //         } else {
-    //             console.log("Please describe how to test the project.");
-    //             return false;
-    //         }
-    //     }
-    // },
-    // { 
-    //     type: "input",
-    //     name: "github",
-    //     message: "Enter your GitHub Username:",
-    //     validate: userGithubInput => {
-    //         if (userGithubInput) {
-    //             return true;
-    //         } else {
-    //             console.log("Please enter your GitHub username.");
-    //             return false;
-    //         }
-    //     }
-    // },
-    // {
-    //     type: "input",
-    //     name: "email",
-    //     message: "Enter your email:",
-    //     validate: userEmailInput => {
-    //         if (userEmailInput) {
-    //             return true;
-    //         } else {
-    //             console.log('Please enter your email.');
-    //             return false;
-    //         }
-    //     }
-    // },
+    {
+        type: "input",
+        name: "contribution",
+        message: "How to contribute to the project?",
+        validate: userContributionInput => {
+            if (userContributionInput) {
+                return true;
+            } else {
+                console.log("Please decsribe how can someone contribute to the project.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "test",
+        message: "How can the project be tested?",
+        validate: userTestInput => {
+            if (userTestInput) {
+                return true;
+            } else {
+                console.log("Please describe how to test the project.");
+                return false;
+            }
+        }
+    },
+    { 
+        type: "input",
+        name: "github",
+        message: "Enter your GitHub Username:",
+        validate: userGithubInput => {
+            if (userGithubInput) {
+                return true;
+            } else {
+                console.log("Please enter your GitHub username.");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email:",
+        validate: userEmailInput => {
+            if (userEmailInput) {
+                return true;
+            } else {
+                console.log('Please enter your email.');
+                return false;
+            }
+        }
+    },
 ];
 
 // TODO: Create a function to write README file
