@@ -10,7 +10,11 @@
 
   Preview:
 
-  ![/Professional-README-Generator-Screenshot](images/professional-readme-generator-screenshot.png)
+  ![Professional-README-Generator-Screenshot](images/professional-readme-generator-screenshot.png)
+
+  Video walk-through:
+
+   [Professional-README-Generator-Video](https://drive.google.com/file/d/1HwVb0SYs1m_Dhu_Tj4pguDRTITVpq8F-/view)
   
   ## License
   Please refer to the license badge on top of the README file. For more information about the license please click on the license badge.
