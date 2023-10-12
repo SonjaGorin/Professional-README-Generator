@@ -21,7 +21,7 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Give brief description of the project.",
+        message: "Give a brief description of the project.",
         validate: userDescriptionInput => {
             if (userDescriptionInput) {
                 return true;
@@ -119,7 +119,7 @@ const questions = [
 
 // Function to write README file in new folder called generated-readme
 function writeToFile(fileName, data) {
-    const destinationDir = "generated-readme";
+    const destinationDir = "generated_readme";
     fs.mkdir(destinationDir, { recursive: true }).then(() => {
         return fs.writeFile(`${destinationDir}/${fileName}`, data);
     }).then((error) => {
