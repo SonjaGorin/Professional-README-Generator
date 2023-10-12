@@ -1,10 +1,10 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license) {
-    return `[![license](https://img.shields.io/badge/license-${license}-purple.svg)](${renderLicenseLink(license)})`
-  } else {
+  if (license === "No license") {
     return ""
+  } else if (license) {
+    return `[![license](https://img.shields.io/badge/license-${license}-purple.svg)](${renderLicenseLink(license)})`
   }
 }
 
@@ -12,9 +12,9 @@ const licenses = {
   "MIT": {"fullName": "MIT-license-link", "link": "https://opensource.org/licenses/MIT"},
   "Apache": {"fullName": "Apache-license-link", "link": "https://opensource.org/license/apache-2-0/"},
   "Boost": {"fullName": "Boost-license-link", "link": "https://www.boost.org/LICENSE_1_0.txt"},
-  "BSD 3-Clause License": {"fullName": "BSD-3-Clause-license-link", "link": "https://opensource.org/license/bsd-3-clause/"},
+  "BSD": {"fullName": "BSD-3-Clause-license-link", "link": "https://opensource.org/license/bsd-3-clause/"},
   "Eclipse": {"fullName": "Eclipse-license-link", "link": "https://opensource.org/license/epl-1-0/"},
-  "GNU GPL v3": {"fullName": "GNU-GPL-v3-license-link", "link": "https://www.gnu.org/licenses/gpl-3.0"},
+  "GPLv3": {"fullName": "GNU-GPL-v3-license-link", "link": "https://www.gnu.org/licenses/gpl-3.0"},
   "IBM": {"fullName": "IBM-license-link", "link": "https://www.ibm.com/docs/en/linux-on-z?topic=examples-common-public-license-v10"},
   "ISC": {"fullName": "ISC-license-link", "link": "https://opensource.org/license/isc-license-txt/"},
   "Mozilla": {"fullName": "Mozilla-license-link", "link": "https://opensource.org/license/mpl-2-0/"},
@@ -28,7 +28,7 @@ function renderLicenseLink(licenseName) {
   if (license) {
     return `${license.link}`;
   } else {
-    return '';
+    return "";
   }
 }
 
@@ -36,9 +36,9 @@ function renderLicenseLink(licenseName) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== "No license") {
-    return "Please refer to the license on top of the README file."
+    return "Please refer to the license badge on top of the README file. For more information about the license please click on the license badge."
   } else {
-    return ""
+    return "There is no license chosen for this project."
   }
 }
 
@@ -65,7 +65,7 @@ function generateMarkdown(data) {
   ${data.contribution}
   ## Testing: 
   ${data.test}
-  ## Contact:
+  ## Questions:
   * Github: [${data.github}](https://github.com/${data.github})
   * Email: [${data.email}](mailto:user@example.com)
 `;
